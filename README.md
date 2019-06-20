@@ -15,14 +15,12 @@ Job.DefaultApiKey = "keygoeshere";
 ```
 **Note:** All methods are Http requests which is async and therefore needs to be awaited before running the next lines.
 
-
-Instantiate a new `Job` class:
+## For single job
+#### Instantiate a new `Job` class:
 ```csharp
 Job job = new Job("doNumber", "date", "address");
 ```
-
-## For single job
-### Create a new job:
+#### Create a new job:
 ```csharp
 // instantiate a job class
 Job job = new Job("date", "address", "doNumber");
@@ -30,8 +28,7 @@ Job job = new Job("date", "address", "doNumber");
 Job.CreateJob(job).Wait();
 ```
 
-Update a job:
-
+#### Update a job:
 **Note:** UpdateJob is a non-static method.
 ```csharp
 // instantiate a job class
@@ -41,20 +38,18 @@ Job job = new Job("date", "address", "doNumber");
 job.UpdateJob("dateOfJobToUpdate", "addressOfJobToUpdate").Wait();
 ```
 
-Retrieve a job:
+#### Retrieve a job:
 ```csharp
 Job.RetrieveJob("doNumber", "date").Wait();
 ```
 
-Delete a job:
-
+#### Delete a job:
 **Note:** Job can only be deleted if its status is "info received" or "out for delivery"
 ```csharp
 Job.DeleteJob("doNumber", "date").Wait();
 ```
 
-Reattempt a job:
-
+#### Reattempt a job:
 **Note:** Only failed jobs can be reattempted
 ```csharp
 Job.ReattemptJob("doNumber", "date").Wait();
@@ -62,7 +57,7 @@ Job.ReattemptJob("doNumber", "date").Wait();
 
 ## For multiple jobs
 **Note:** All batch jobs uses `List<Job>` as a parameter
-Create a list of jobs:
+#### Create a list of jobs:
 ```csharp
 List<Job> joblist = new List<Job>();
 
@@ -77,7 +72,7 @@ joblist.Add(job2);
 joblist.Add(job3);
 ```
 
-Batch create jobs:
+#### Batch create jobs:
 ```csharp
 // create a list of jobs
 List<Job> joblist = new List<Job>();
@@ -100,7 +95,7 @@ joblist.Add(job3);
 Job.CreateJobs(joblist).Wait();
 ```
 
-Batch update jobs:
+#### Batch update jobs:
 Batch update jobs will update job with the specified `doNumber` and `date`.
 ```csharp
 // create a list of jobs
@@ -124,11 +119,12 @@ joblist.Add(job3);
 Job.UpdateJobs(joblist).Wait();
 ```
 
-Batch delete jobs:
+#### Batch delete jobs:
+Batch delete jobs will update job with the specified `doNumber` and `date`.
 ```csharp
 // create a list of jobs
-
 List<Job> joblist = new List<Job>();
+
 // instantiate several jobs
 Job job1 = new Job("doNumber", "date", "address");
 Job job2 = new Job("doNumber", "date", "address");
@@ -144,8 +140,7 @@ Job.DeleteJobs(joblist);
 ```
 
 ## Extra Functions
-List All Jobs:
-
+#### List All Jobs:
 **Note:** Parameters available is : `page`, `limit`, `date`, `type`, `assignTo`, `JobStatus`, `doNumber`.
 
 ```csharp
@@ -161,9 +156,30 @@ parameters.Add("JobStatus", JobStatus.completed_partial.ToString());
 Job.ListAllJobs(parameters);
 ```
 
-Download Job POD or shipping label as pdf:
-
+#### Download Job POD or shipping label as pdf:
 **Note:** pathToSaveFile will start in the folder that contains the dll. If you want to go out of the folder then do `../`
 ```csharp
 Job.DownloadJobExport("doNumber", "pathToSaveFile", "documentType(pod or shipping-label)", "date").Wait();
 ```
+
+## Adding and Removing Items on a Job
+#### Adding Items
+```csharp
+// instantiate a job
+Job job = new Job("doNumber", "date", "address");
+
+// create a new item class
+Item item = new Item();
+
+// (optional) Change some fields here
+item.Description = "Insert description here";
+item.Quantity = 15;
+item.RejectQuantity= 20;
+
+// add the itemlist into the job
+job.Items.Add(item);
+```
+
+#### Removing Items
+```csharp
+job.Items
