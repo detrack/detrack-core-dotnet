@@ -102,7 +102,7 @@ Job.CreateJobs(joblist).Wait();
 ```
 
 Batch update jobs:
-Batch update jobs will update job with the specified DO Number and Date.
+Batch update jobs will update job with the specified `doNumber` and `date`.
 ```csharp
 // create a list of jobs
 List<Job> joblist = new List<Job>();
@@ -147,7 +147,7 @@ Job.DeleteJobs(joblist);
 ## Extra Functions
 List All Jobs:
 
-**Note:** Parameters available is : page, limit, date, type, assignTo, JobStatus, doNumber.
+**Note:** Parameters available is : `page`, `limit`, `date`, `type`, `assignTo`, `JobStatus`, `doNumber.`
 
 ```csharp
 // create a dictionary with type string as key and values
@@ -164,7 +164,7 @@ Job.ListAllJobs(parameters);
 
 Download Job POD or shipping label as pdf:
 
-**Note:** pathToSaveFile will start in the folder that contains the dll. If you want to go out of the folder then do ../
+**Note:** pathToSaveFile will start in the folder that contains the dll. If you want to go out of the folder then do `../`
 ```csharp
 Job.DownloadJobExport("doNumber", "pathToSaveFile", "documentType(pod or shipping-label)", "date").Wait();
 ```
