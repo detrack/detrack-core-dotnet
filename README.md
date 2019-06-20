@@ -1,7 +1,7 @@
 ![Detrack logo](https://www.detrack.com/wp-content/uploads/2016/12/Logo_detrack.png)
 # detrack-core-dotnet
 
-Official core library for ~~PHP~~ .NET applications to interact with the [Detrack](https://www.detrack.com) API.
+Official core library for ~~PHP~~ .NET applications to interact with the [Detrack](https://www.detrack.com) API. :thumbsup:
 
 ## Instalation
 Install with dotnet-cli:
@@ -21,7 +21,7 @@ Instantiate a new `Job` class:
 Job job = new Job("doNumber", "date", "address");
 ```
 
-## For single jobs
+## For single job
 Create a new job:
 ```csharp
 // instantiate a job class
@@ -96,6 +96,7 @@ job2.OpenToMarketplace = true;
 joblist.Add(job1);
 joblist.Add(job2);
 joblist.Add(job3);
+
 // batch create jobs
 Job.CreateJobs(joblist).Wait();
 ```
@@ -110,6 +111,7 @@ List<Job> joblist = new List<Job>();
 Job job1 = new Job("doNumber", "date", "address");
 Job job2 = new Job("doNumber", "date", "address");
 Job job3 = new Job("doNumber", "date", "address");
+
 // (optional) you can change fields before adding them into the list
 job1.assignTo = "driver";
 job2.OpenToMarketplace = true;
@@ -126,6 +128,7 @@ Job.UpdateJobs(joblist).Wait();
 Batch delete jobs:
 ```csharp
 // create a list of jobs
+
 List<Job> joblist = new List<Job>();
 // instantiate several jobs
 Job job1 = new Job("doNumber", "date", "address");
@@ -161,7 +164,7 @@ Job.ListAllJobs(parameters);
 
 Download Job POD or shipping label as pdf:
 
-**Note:** pathToSaveFile will start in the folder that contains the dll. if you want to go out of the folder then do ../
+**Note:** pathToSaveFile will start in the folder that contains the dll. If you want to go out of the folder then do ../
 ```csharp
 Job.DownloadJobExport("doNumber", "pathToSaveFile", "documentType(pod or shipping-label)", "date").Wait();
 ```
