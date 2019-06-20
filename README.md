@@ -22,7 +22,7 @@ Job job = new Job("doNumber", "date", "address");
 ```
 
 ## For single job
-Create a new job:
+### Create a new job:
 ```csharp
 // instantiate a job class
 Job job = new Job("date", "address", "doNumber");
@@ -61,6 +61,7 @@ Job.ReattemptJob("doNumber", "date").Wait();
 ```
 
 ## For multiple jobs
+**Note:** All batch jobs uses `List<Job>` as a parameter
 Create a list of jobs:
 ```csharp
 List<Job> joblist = new List<Job>();
@@ -77,8 +78,6 @@ joblist.Add(job3);
 ```
 
 Batch create jobs:
-
-**Note:** All batch jobs uses joblist as a parameter
 ```csharp
 // create a list of jobs
 List<Job> joblist = new List<Job>();
@@ -147,7 +146,7 @@ Job.DeleteJobs(joblist);
 ## Extra Functions
 List All Jobs:
 
-**Note:** Parameters available is : `page`, `limit`, `date`, `type`, `assignTo`, `JobStatus`, `doNumber.`
+**Note:** Parameters available is : `page`, `limit`, `date`, `type`, `assignTo`, `JobStatus`, `doNumber`.
 
 ```csharp
 // create a dictionary with type string as key and values
