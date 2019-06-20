@@ -163,6 +163,7 @@ Job.DownloadJobExport("doNumber", "pathToSaveFile", "documentType(pod or shippin
 ```
 
 ## Adding and Removing Items on a Job
+**Note:** Updating an item requires you to create a new `Item` class and push the update
 #### Adding Items
 ```csharp
 // instantiate a job
@@ -178,8 +179,22 @@ item.RejectQuantity= 20;
 
 // add the itemlist into the job
 job.Items.Add(item);
+
+// update the job
+Job.UpdateJob("doNumber", "date").Wait();
 ```
 
 #### Removing Items
 ```csharp
-job.Items
+// if you know the index of the item
+job.Items.RemoveAt(index);
+
+//if you know the ID of the items
+foreach (Item item in job.Items)
+{
+    if (item.ID == "job id to delete")
+    {
+        job.Items.Remove(item);
+    }
+}
+```
