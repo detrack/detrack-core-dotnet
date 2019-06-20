@@ -1,0 +1,14 @@
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/obj/Debug/netcoreapp2.1/Detrack.csprojAssemblyReference.cache
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/obj/Debug/netcoreapp2.1/Detrack.csproj.CoreCompileInputs.cache
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/obj/Debug/netcoreapp2.1/Detrack.AssemblyInfoInputs.cache
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/obj/Debug/netcoreapp2.1/Detrack.AssemblyInfo.cs
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/bin/Debug/netcoreapp2.1/Detrack.deps.json
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/bin/Debug/netcoreapp2.1/Detrack.runtimeconfig.json
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/bin/Debug/netcoreapp2.1/Detrack.runtimeconfig.dev.json
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/bin/Debug/netcoreapp2.1/Detrack.dll
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/bin/Debug/netcoreapp2.1/Detrack.pdb
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/obj/Debug/netcoreapp2.1/Detrack.dll
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/obj/Debug/netcoreapp2.1/Detrack.pdb
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/bin/Debug/netcoreapp2.1/DetrackLibrary.dll
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/bin/Debug/netcoreapp2.1/DetrackLibrary.pdb
+/Users/sesiliafeninagunawan/Desktop/Detrack/Detrack/obj/Debug/netcoreapp2.1/Detrack.csproj.CopyComplete

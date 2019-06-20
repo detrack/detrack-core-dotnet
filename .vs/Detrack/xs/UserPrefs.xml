@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{5FAD6E34-EE62-4047-A971-04A9DFC3FCAC}|Default">
+  <MonoDevelop.Ide.ItemProperties.Detrack PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DetrackLibrary/Job.cs">
+    <Files>
+      <File FileName="Detrack/Test.cs" Line="4" Column="15" />
+      <File FileName="DetrackLibrary/Job.cs" Line="35" Column="51" />
+      <File FileName="UnitTest/UnitTest1.cs" />
+      <File FileName="DetrackLibrary/Item.cs" />
+      <File FileName="../../../../usr/local/share/dotnet/sdk/2.2.300/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
