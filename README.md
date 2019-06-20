@@ -54,6 +54,7 @@ Job.DeleteJob("doNumber", "date").Wait();
 ```
 
 Reattempt a job:
+
 **Note:** Only failed jobs can be reattempted
 ```csharp
 Job.ReattemptJob("doNumber", "date").Wait();
@@ -140,6 +141,7 @@ joblist.Add(job3);
 Job.DeleteJobs(joblist);
 ```
 
+## Extra Functions
 List All Jobs:
 
 **Note:** Parameters available is : page, limit, date, type, assignTo, JobStatus, doNumber.
@@ -155,4 +157,11 @@ parameters.Add("JobStatus", JobStatus.completed_partial.ToString());
 
 // list all jobs
 Job.ListAllJobs(parameters);
+```
+
+Download Job POD or shipping label as pdf:
+
+**Note:** pathToSaveFile will start in the folder that contains the dll. if you want to go out of the folder then do ../
+```csharp
+Job.DownloadJobExport("doNumber", "pathToSaveFile", "documentType(pod or shipping-label)", "date").Wait();
 ```
