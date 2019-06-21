@@ -17,7 +17,7 @@
     using Newtonsoft.Json.Converters;
     using Newtonsoft.Json.Linq;
     using Newtonsoft.Json.Serialization;
-
+    
     /// <summary>
     /// JobStatus can only be chosen from this enum.
     /// </summary>
@@ -1826,6 +1826,7 @@
         /// it will take the job with the latest date</param>
         public static async Task<string> RetrieveJob(string doNumber, string date = null)
         {
+            IsAPIEmpty(Job.DefaultApiKey);
             doNumber = HttpUtility.UrlEncode(doNumber);
             string link = $"dn/jobs/{doNumber}";
             if (date != null)
@@ -1867,6 +1868,7 @@
         /// it will take the job with the latest date</param>
         public static async Task DeleteJob(string doNumber, string date = null)
         {
+            IsAPIEmpty(Job.DefaultApiKey);
             doNumber = HttpUtility.UrlEncode(doNumber);
             string link = $"dn/jobs/{doNumber}";
             if (date != null)
@@ -1903,6 +1905,7 @@
         /// assignTo, jobStatus, doNumber) and its value.</param>
         public static async Task<string> ListAllJobs(Dictionary<string, string> paramList)
         {
+            IsAPIEmpty(Job.DefaultApiKey);
             StringBuilder link = new StringBuilder();
             List<string> parameter = new List<string> 
             {
@@ -1989,6 +1992,7 @@
         /// it will take the job with the latest date</param>
         public static async Task ReattemptJob(string doNumber, string date)
         {
+            IsAPIEmpty(Job.DefaultApiKey);
             DateChecker(date);
             var request = new HttpRequestMessage
             {
@@ -2022,6 +2026,7 @@
         /// to create.</param>
         public static async Task CreateJobs(List<Job> jobList)
         {
+            IsAPIEmpty(Job.DefaultApiKey);
             var request = new HttpRequestMessage
             {
                 RequestUri = new Uri("https://app.detrack.com/api/v2/dn/jobs/bulk"),
@@ -2054,6 +2059,7 @@
         /// to update.</param>
         public static async Task UpdateJobs(List<Job> jobList)
         {
+            IsAPIEmpty(Job.DefaultApiKey);
             PropertyInfo[] properties = typeof(Job).GetProperties();
             List<Job> updatedList = new List<Job>();
 
@@ -2129,6 +2135,7 @@
         /// <param name="jobList">Job list.</param>
         public static async Task DeleteJobs(List<Job> jobList)
         {
+            IsAPIEmpty(Job.DefaultApiKey);
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Delete,
@@ -2166,6 +2173,7 @@
                                                            string document = "pod",
                                                            string date = null)
         {
+            IsAPIEmpty(Job.DefaultApiKey);
             doNumber = HttpUtility.UrlEncode(doNumber);
             string link = $"dn/jobs/export/{doNumber}";
             if (date != null)
@@ -2208,6 +2216,7 @@
         /// </summary>
         public static async Task CreateJob(Job job)
         {
+            IsAPIEmpty(Job.DefaultApiKey);
             var request = new HttpRequestMessage
             {
                 RequestUri = new Uri("https://app.detrack.com/api/v2/dn/jobs"),
@@ -2241,6 +2250,7 @@
         /// If <see langword="null"/>, it will take the job with the latest date</param>
         public async Task UpdateJob(string doNumber = null, string date = null)
         {
+            IsAPIEmpty(Job.DefaultApiKey);
             string link = "dn/jobs";
             if (doNumber != null)
             {
@@ -2459,6 +2469,14 @@
                     StringSplitOptions.RemoveEmptyEntries)
                     .Select(s => char.ToUpperInvariant(s[0]) + s.Substring(1, s.Length - 1))
                     .Aggregate(string.Empty, (s1, s2) => s1 + s2);
+        }
+
+        private static void IsAPIEmpty(string APIKey)
+        {
+            if (String.IsNullOrEmpty(APIKey))
+            {
+                throw new ArgumentException("API Key cannot be empty!");
+            }
         }
     }
 }

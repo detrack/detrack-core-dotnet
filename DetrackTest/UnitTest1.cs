@@ -1,5 +1,4 @@
 using System;
-using System.Reflection;
 using NUnit.Framework;
 using Detrack.DetrackCore;
 using System.Collections.Generic;
@@ -22,18 +21,6 @@ namespace Tests
 
             Assert.Throws(Is.TypeOf<ArgumentException>().And.Message.EqualTo("DO Number, Address or Date cannot be empty!"),
                 () => new Job("", "Singapore", "DO 1"));
-        }
-
-        [Test]
-        public void When_JobClassInstantiated_Expect_FieldsExist()
-        {
-            Job myjob = new Job("2019-05-20", "Singapore", "DO 0");
-
-            foreach (PropertyInfo property in typeof(Job).GetProperties())
-            {
-                //var p = myjob.GetType().GetProperty($"{property}");
-                Assert.IsTrue(property != null);
-            }
         }
 
         [Test]
