@@ -1,7 +1,11 @@
 .DS_store
-Detrack/.DS_Store
-Detrack/ACodeToSimplifyMyLife
-Detrack/Detrack.csproj
-Detrack/Test.cs
-Detrack/Testing.cs
-Detrack.sln
+Detrack
+.vs/Detrack/xs
+DetrackLibrary/.vs/DetrackLibrary/xs
+DetrackLibrary/bin/Debug/netstandard2.0
+DetrackLibrary/obj
+DetrackLibrary/DetrackLibrary.sln
+DetrackLibrary/Settings.StyleCop
+DetrackLibrary/StyleCop.Cache
+DetrackTest/bin/Debug/netcoreapp2.1
+DetrackTest/obj
