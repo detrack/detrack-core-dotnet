@@ -1,8 +1,9 @@
 .DS_store
 Detrack
-.vs/Detrack/xs
-DetrackLibrary/.vs/DetrackLibrary/xs
-DetrackLibrary/bin/Debug/netstandard2.0
+.vs
+Settings.StyleCop
+DetrackLibrary/.vs
+DetrackLibrary/bin
 DetrackLibrary/obj
 DetrackLibrary/DetrackLibrary.sln
 DetrackLibrary/Settings.StyleCop
