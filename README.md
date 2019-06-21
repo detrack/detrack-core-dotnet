@@ -29,13 +29,15 @@ Job.CreateJob(job).Wait();
 ```
 
 #### Update a job:
-**Note:** UpdateJob is a non-static method.
+**Note:**
+- UpdateJob is a non-static method.
+- Both parameters are optional. If not given, it will take the instance's do number and date
 ```csharp
 // instantiate a job class
 Job job = new Job("date", "address", "doNumber");
 
 // instance method
-job.UpdateJob("dateOfJobToUpdate", "addressOfJobToUpdate").Wait();
+job.UpdateJob("doNumber", "date").Wait();
 ```
 
 #### Retrieve a job:
