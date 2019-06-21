@@ -175,6 +175,8 @@
             }
         }
 
+        public static string DefaultApiKey { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string DONumber
@@ -1839,7 +1841,7 @@
                 Headers =
                 {
                     {
-                        "X-API-KEY", "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0"
+                        "X-API-KEY", Job.DefaultApiKey
                     },
                     {
                         HttpRequestHeader.ContentType.ToString(), "application/json"
@@ -1880,7 +1882,7 @@
                 Headers =
                 {
                     {
-                        "X-API-KEY", "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0"
+                        "X-API-KEY", Job.DefaultApiKey
                     },
                     {
                         HttpRequestHeader.ContentType.ToString(), "application/json"
@@ -1961,7 +1963,7 @@
                 Headers =
                 {
                     {
-                        "X-API-KEY", "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0"
+                        "X-API-KEY", Job.DefaultApiKey
                     },
                     {
                         HttpRequestHeader.ContentType.ToString(), "application/json"
@@ -1995,7 +1997,7 @@
                 Headers =
                 {
                     {
-                        "X-API-KEY", "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0"
+                        "X-API-KEY", Job.DefaultApiKey
                     },
                     {
                         HttpRequestHeader.ContentType.ToString(), "application/json"
@@ -2012,7 +2014,7 @@
         }
 
         /// <summary>
-        /// Creates multiple jobs on the database in a single http call.
+        /// dCreates multiple jobs on the database in a single http call.
         /// This is a <see langword="static"/> method. This function's call
         /// must be awaited.
         /// </summary>
@@ -2027,7 +2029,7 @@
                 Headers =
                 {
                     {
-                        "X-API-KEY", "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0"
+                        "X-API-KEY", Job.DefaultApiKey
                     },
                     {
                         HttpRequestHeader.ContentType.ToString(), "application/json"
@@ -2102,7 +2104,7 @@
                 Headers =
                 {
                     {
-                        "X-API-KEY", "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0"
+                        "X-API-KEY", Job.DefaultApiKey
                     },
                     {
                         HttpRequestHeader.ContentType.ToString(), "application/json"
@@ -2134,7 +2136,7 @@
                 Headers =
                 {
                     {
-                        "X-API-KEY", "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0"
+                        "X-API-KEY", Job.DefaultApiKey
                     },
                     {
                         HttpRequestHeader.ContentType.ToString(), "application/json"
@@ -2183,7 +2185,7 @@
                 Headers =
                 {
                     {
-                        "X-API-KEY", "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0"
+                        "X-API-KEY", Job.DefaultApiKey
                     },
                     {
                         HttpRequestHeader.ContentType.ToString(), "application/octet-stream"
@@ -2213,7 +2215,7 @@
                 Headers =
                 {
                     {
-                        "X-API-KEY", "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0"
+                        "X-API-KEY", Job.DefaultApiKey
                     },
                     {
                         HttpRequestHeader.ContentType.ToString(), "application/json"
@@ -2281,7 +2283,7 @@
                 Headers =
                 {
                     {
-                        "X-API-KEY", "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0"
+                        "X-API-KEY", Job.DefaultApiKey
                     },
                     {
                         HttpRequestHeader.ContentType.ToString(), "application/json"
