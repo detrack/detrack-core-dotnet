@@ -1,9 +1,0 @@
-/Users/sesiliafeninagunawan/Desktop/Detrack/DetrackLibrary/bin/Debug/netstandard2.0/DetrackLibrary.deps.json
-/Users/sesiliafeninagunawan/Desktop/Detrack/DetrackLibrary/bin/Debug/netstandard2.0/DetrackLibrary.dll
-/Users/sesiliafeninagunawan/Desktop/Detrack/DetrackLibrary/bin/Debug/netstandard2.0/DetrackLibrary.pdb
-/Users/sesiliafeninagunawan/Desktop/Detrack/DetrackLibrary/obj/Debug/netstandard2.0/DetrackLibrary.csprojAssemblyReference.cache
-/Users/sesiliafeninagunawan/Desktop/Detrack/DetrackLibrary/obj/Debug/netstandard2.0/DetrackLibrary.csproj.CoreCompileInputs.cache
-/Users/sesiliafeninagunawan/Desktop/Detrack/DetrackLibrary/obj/Debug/netstandard2.0/DetrackLibrary.AssemblyInfoInputs.cache
-/Users/sesiliafeninagunawan/Desktop/Detrack/DetrackLibrary/obj/Debug/netstandard2.0/DetrackLibrary.AssemblyInfo.cs
-/Users/sesiliafeninagunawan/Desktop/Detrack/DetrackLibrary/obj/Debug/netstandard2.0/DetrackLibrary.dll
-/Users/sesiliafeninagunawan/Desktop/Detrack/DetrackLibrary/obj/Debug/netstandard2.0/DetrackLibrary.pdb
