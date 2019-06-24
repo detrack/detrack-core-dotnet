@@ -3,7 +3,7 @@
 
 Official core library for .NET applications to interact with the [Detrack](https://www.detrack.com) API. :thumbsup:
 
-## Instalation
+## Installation
 Install with dotnet-cli:
 ```
 dotnet add package ?????
