@@ -17,6 +17,8 @@
     using Newtonsoft.Json.Converters;
     using Newtonsoft.Json.Linq;
     using Newtonsoft.Json.Serialization;
+
+    using Exceptions;
     
     /// <summary>
     /// JobStatus can only be chosen from this enum.
@@ -171,7 +173,7 @@
             }
             else
             {
-                throw new ArgumentException("DO Number, Address or Date cannot be empty!");
+                throw new DONumberEmptyException("DO Number, Address or Date cannot be empty!");
             }
         }
 
@@ -1921,7 +1923,7 @@
             {
                 if (parameter.Contains(key) is false)
                 {
-                    throw new ArgumentException($"{key} is an invalid key");
+                    throw new InvalidParameterException($"{key} is an invalid key");
                 }
                 switch (key)
                 {
@@ -2072,21 +2074,21 @@
                     job.PODTime == null &&
                     retJob.PODTime == null)
                 {
-                    throw new ArgumentNullException("PODTime", $"DO Number: {retJob.DONumber}. To change status to completed, POD time is needed");
+                    throw new PODTimeEmptyException($"DO Number: {retJob.DONumber}. To change status to completed, POD time is needed");
                 }
 
                 if (job.Status == JobStatus.completed_partial && 
                     job.PODTime == null && 
                     retJob.PODTime == null)
                 {
-                    throw new ArgumentNullException("PODTime", $"DO Number: {retJob.DONumber}. To change status to partially completed, POD time is needed");
+                    throw new PODTimeEmptyException($"DO Number: {retJob.DONumber}. To change status to partially completed, POD time is needed");
                 }
 
                 if (job.Status == JobStatus.failed && 
                     job.PODTime == null && 
                     retJob.PODTime == null)
                 {
-                    throw new ArgumentNullException("PODTime", $"DO Number: {retJob.DONumber}. To change status to failed, POD time is needed");
+                    throw new PODTimeEmptyException($"DO Number: {retJob.DONumber}. To change status to failed, POD time is needed");
                 }
 
                 foreach (var item in job._modified_properties)
@@ -2370,16 +2372,16 @@
 
                 if (month > 12 || month <= 0)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(dates), "Month is not a valid number");
+                    throw new InvalidDateException("Month is not a valid number");
                 }
 
                 if (day > 31 || day <= 0)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(dates), "Day is not a valid number");
+                    throw new InvalidDateException("Day is not a valid number");
                 }
                 return true;
             }
-            throw new ArgumentException("Invalid date format. Date must be integer and date format must be yyyy-mm-dd");
+            throw new InvalidDateException("Invalid date format. Date must be integer and date format must be yyyy-mm-dd");
         }
 
         private static void CheckForExceptions(string responseData)
@@ -2398,15 +2400,15 @@
                     }
                     else if (jsonObject["code"].ToString() == "forbidden")
                     {
-                        throw new ArgumentException("Job is either completed, partially completed or failed.");
+                        throw new UndeletableJobException("Job is either completed, partially completed or failed.");
                     }
                     else if (jsonObject["code"].ToString() == "not_found")
                     {
-                        throw new ArgumentException("Could not find job with this DO Number");
+                        throw new DONumberNotFoundException("Could not find job with this DO Number");
                     }
                     else if (jsonObject["code"].ToString() == "invalid_reattempt")
                     {
-                        throw new ArgumentException("Job must only be failed for reattempt.");
+                        throw new InvalidReattemptException("Job must only be failed for reattempt.");
                     }
                     else if (jsonObject["code"].ToString() != null)
                     {
@@ -2437,7 +2439,7 @@
                     }
                     else if (jsonObject["code"].ToString() == "invalid_data")
                     {
-                        throw new ArgumentNullException("List<JobClass>", "JobClass list is empty.");
+                        throw new EmptyDataException("JobClass list is empty.");
                     }
                     else if (jsonObject["code"].ToString() == "deletion_failed")
                     {
@@ -2445,11 +2447,11 @@
                         {
                             if (item["codes"][0].ToString() == "undeletable")
                             {
-                                throw new ArgumentException($"DO Number: {item["do_number"]} is either completed, partially completed or failed so it cannot be deleted.");
+                                throw new UndeletableJobException($"DO Number: {item["do_number"]} is either completed, partially completed or failed so it cannot be deleted.");
                             }
                             else if (item["codes"][0].ToString() == "not_found")
                             {
-                                throw new ArgumentException($"DO Number: {item["do_number"]}. Could not find job with this DO Number.");
+                                throw new DONumberNotFoundException($"DO Number: {item["do_number"]}. Could not find job with this DO Number.");
                             }
                         }
                     }
