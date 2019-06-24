@@ -23,7 +23,7 @@ Job job = new Job("doNumber", "date", "address");
 #### Create a new job:
 ```csharp
 // instantiate a job class
-Job job = new Job("date", "address", "doNumber");
+Job job = new Job("doNumber", "date", "address");
 // static method
 Job.CreateJob(job).Wait();
 ```
@@ -34,7 +34,7 @@ Job.CreateJob(job).Wait();
 - Both parameters are optional. If not given, it will take the instance's do number and date
 ```csharp
 // instantiate a job class
-Job job = new Job("date", "address", "doNumber");
+Job job = new Job("doNumber", "date", "address");
 
 // instance method
 job.UpdateJob("doNumber", "date").Wait();
