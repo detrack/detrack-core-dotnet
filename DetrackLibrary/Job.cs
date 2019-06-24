@@ -158,7 +158,7 @@
         /// <param name="date">Used to indicate date in which the job is made.</param>
         /// <param name="address">Used to indicate the address of the job.</param>
         /// <param name="doNumber">The given DO Number for the job.</param>
-        public Job(string date, string address, string doNumber)
+        public Job(string doNumber, string date, string address)
         {
             if (date != string.Empty && 
                 address != string.Empty && 
