@@ -26,19 +26,19 @@ namespace Tests
         [Test]
         public void When_JobClassInstantiated_Expect_DateValid()
         {
-            Exception exception = Assert.Throws<ArgumentOutOfRangeException>(() => new Job("2019-15-20", "Singapore", "DO 1"));
+            Exception exception = Assert.Throws<ArgumentOutOfRangeException>(() => new Job("DO 1", "2019-15-20", "Singapore"));
             Assert.AreEqual("Month is not a valid number\nParameter name: dates", exception.Message);
 
-            Exception exception1 = Assert.Throws<ArgumentOutOfRangeException>(() => new Job("2019-05-33", "Singapore", "DO 1"));
+            Exception exception1 = Assert.Throws<ArgumentOutOfRangeException>(() => new Job("DO 1", "2019-05-33", "Singapore"));
             Assert.AreEqual("Day is not a valid number\nParameter name: dates", exception1.Message);
 
-            Exception exception2 = Assert.Throws<ArgumentException>(() => new Job("2019=05=20", "Singapore", "DO 1"));
+            Exception exception2 = Assert.Throws<ArgumentException>(() => new Job("DO 1", "2019=05=20", "Singapore"));
             Assert.AreEqual("Invalid date format. Date must be integer and date format must be yyyy-mm-dd", exception2.Message);
 
-            Exception exception3 = Assert.Throws<ArgumentException>(() => new Job("2019-11.5-20", "Singapore", "DO 1"));
+            Exception exception3 = Assert.Throws<ArgumentException>(() => new Job("DO 1", "2019-11.5-20", "Singapore"));
             Assert.AreEqual("Invalid date format. Date must be integer and date format must be yyyy-mm-dd", exception3.Message);
 
-            Exception exception4 = Assert.Throws<ArgumentException>(() => new Job("25-05-2019", "Singapore", "DO 1"));
+            Exception exception4 = Assert.Throws<ArgumentException>(() => new Job("DO 1", "25-05-2019", "Singapore"));
             Assert.AreEqual("Invalid date format. Date must be integer and date format must be yyyy-mm-dd", exception3.Message);
         }
     }
@@ -49,7 +49,7 @@ namespace Tests
         public void When_DONumberExist_Expect_ThrowError()
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
-            Job myjob = new Job("2019-06-11", "Singapore", "when do number exist throw error");
+            Job myjob = new Job("when do number exist throw error", "2019-06-11", "Singapore");
             Exception ex = Assert.Throws<AggregateException>(() => Job.CreateJob(myjob).Wait());
             Assert.AreEqual("One or more errors occurred. (DoNumber is already taken)", ex.Message);
         }
@@ -60,7 +60,7 @@ namespace Tests
             try
             {
                 Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
-                Job myjob = new Job("2019-06-11", "Singapore", "created");
+                Job myjob = new Job("created", "2019-06-11", "Singapore");
                 Job.CreateJob(myjob).Wait();
             }
             catch(Exception exception)
@@ -130,7 +130,7 @@ namespace Tests
                 Assert.Fail("Expected no exception but got" + exception.Message);
             }
 
-            Job myjob = new Job("2019-06-11", "Singapore", "when job is out for delivery pass");
+            Job myjob = new Job("when job is out for delivery pass", "2019-06-11", "Singapore");
             myjob.AssignTo = "Nina";
             Job.CreateJob(myjob).Wait();
         }
@@ -158,7 +158,7 @@ namespace Tests
         public void When_DONumberDoesNotExist_Expect_ThrowError()
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
-            Job myjob = new Job("2019-06-11", "Singapore", "i dont exist");
+            Job myjob = new Job("i dont exist", "2019-06-11", "Singapore");
             Exception ex = Assert.Throws<AggregateException>(() => myjob.UpdateJob().Wait());
             Assert.AreEqual("One or more errors occurred. (Could not find job with this DO Number)", ex.Message);
         }
@@ -167,7 +167,7 @@ namespace Tests
         public void When_JobStatusUpdatedtoCompletedWithoutPODTime_Expect_ThrowError()
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
-            Job myjob = new Job("2019-06-11", "Singapore", "when job status updated to c/pc/f without pod time error");
+            Job myjob = new Job("when job status updated to c/pc/f without pod time error", "2019-06-11", "Singapore");
             myjob.Status = JobStatus.completed;
             Exception ex = Assert.Throws<AggregateException>(() => myjob.UpdateJob().Wait());
             Console.WriteLine(ex.Message);
@@ -178,7 +178,7 @@ namespace Tests
         public void When_JobStatusUpdatedtoPartiallyCompletedWithoutPODTime_Expect_ThrowError()
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
-            Job myjob = new Job("2019-06-11", "Singapore", "when job status updated to c/pc/f without pod time error");
+            Job myjob = new Job("when job status updated to c/pc/f without pod time error", "2019-06-11", "Singapore");
             myjob.Status = JobStatus.completed_partial;
             Exception ex = Assert.Throws<AggregateException>(() => myjob.UpdateJob().Wait());
             Assert.AreEqual("One or more errors occurred. (PodTime cannot be blank)", ex.Message);
@@ -188,7 +188,7 @@ namespace Tests
         public void When_JobStatusUpdatedtoFailedWithoutPODTime_Expect_ThrowError()
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
-            Job myjob = new Job("2019-06-11", "Singapore", "when job status updated to c/pc/f without pod time error");
+            Job myjob = new Job("when job status updated to c/pc/f without pod time error", "2019-06-11", "Singapore");
             myjob.Status = JobStatus.failed;
             Exception ex = Assert.Throws<AggregateException>(() => myjob.UpdateJob().Wait());
             Assert.AreEqual("One or more errors occurred. (PodTime cannot be blank)", ex.Message);
@@ -267,9 +267,9 @@ namespace Tests
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
             List<Job> jobs = new List<Job>();
 
-            Job job1 = new Job("2019-06-11", "Singapore", "ppppp");
-            Job job2 = new Job("2019-06-11", "Singapore", "when do number exist throw error (creating jobs)");
-            Job job3 = new Job("2019-06-11", "Singapore", "oooooo");
+            Job job1 = new Job("ppppp", "2019-06-11", "Singapore");
+            Job job2 = new Job("when do number exist throw error (creating jobs)", "2019-06-11", "Singapore");
+            Job job3 = new Job("oooooo", "2019-06-11", "Singapore");
 
             jobs.Add(job1);
             jobs.Add(job2);
@@ -300,9 +300,9 @@ namespace Tests
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
             List<Job> jobs = new List<Job>();
 
-            Job job1 = new Job("2019-06-11", "Singapore", "i dont exist");
-            Job job2 = new Job("2019-06-11", "Singapore", "i dont exist too");
-            Job job3 = new Job("2019-06-11", "Singapore", "i dont exist too ver 2");
+            Job job1 = new Job("i dont exist", "2019-06-11", "Singapore");
+            Job job2 = new Job("i dont exist too", "2019-06-11", "Singapore");
+            Job job3 = new Job("i dont exist too ver 2", "2019-06-11", "Singapore");
 
             jobs.Add(job1);
             jobs.Add(job2);
@@ -318,9 +318,9 @@ namespace Tests
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
             List<Job> jobs = new List<Job>();
-            Job job1 = new Job("2019-06-11", "Singapore", "dummy job update jobs 1");
-            Job job2 = new Job("2019-06-11", "Singapore", "when job status updated to c/pc/f without pod time throw error (updating jobs)");
-            Job job3 = new Job("2019-06-11", "Singapore", "dummy job update jobs 2");
+            Job job1 = new Job("dummy job update jobs 1", "2019-06-11", "Singapore");
+            Job job2 = new Job("when job status updated to c/pc/f without pod time throw error (updating jobs)", "2019-06-11", "Singapore");
+            Job job3 = new Job("dummy job update jobs 2", "2019-06-11", "Singapore");
 
             job1.AssignTo = "Nina";
             job2.AssignTo = "Nina";
@@ -343,9 +343,9 @@ namespace Tests
             Job.DeleteJobs(jobs).Wait();
 
             List<Job> newjobs = new List<Job>();
-            Job newjob1 = new Job("2019-06-11", "Singapore", "dummy job update jobs 1");
-            Job newjob2 = new Job("2019-06-11", "Singapore", "when job status updated to c/pc/f without pod time throw error (updating jobs)");
-            Job newjob3 = new Job("2019-06-11", "Singapore", "dummy job update jobs 2");
+            Job newjob1 = new Job("dummy job update jobs 1", "2019-06-11", "Singapore");
+            Job newjob2 = new Job("when job status updated to c/pc/f without pod time throw error (updating jobs)", "2019-06-11", "Singapore");
+            Job newjob3 = new Job("dummy job update jobs 2", "2019-06-11", "Singapore");
             newjobs.Add(newjob1);
             newjobs.Add(newjob2);
             newjobs.Add(newjob3);
@@ -357,9 +357,9 @@ namespace Tests
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
             List<Job> jobs = new List<Job>();
-            Job job1 = new Job("2019-06-11", "Singapore", "when job status updated to c/pc/f without pod time throw error (updating jobs)");
-            Job job2 = new Job("2019-06-11", "Singapore", "dummy job update jobs 1");
-            Job job3 = new Job("2019-06-11", "Singapore", "dummy job update jobs 2");
+            Job job1 = new Job("when job status updated to c/pc/f without pod time throw error (updating jobs)", "2019-06-11", "Singapore");
+            Job job2 = new Job("dummy job update jobs 1", "2019-06-11", "Singapore");
+            Job job3 = new Job("dummy job update jobs 2", "2019-06-11", "Singapore");
 
             job1.AssignTo = "Nina";
             job2.AssignTo = "Nina";
@@ -382,9 +382,9 @@ namespace Tests
             Job.DeleteJobs(jobs).Wait();
 
             List<Job> newjobs = new List<Job>();
-            Job newjob1 = new Job("2019-06-11", "Singapore", "dummy job update jobs 1");
-            Job newjob2 = new Job("2019-06-11", "Singapore", "when job status updated to c/pc/f without pod time throw error (updating jobs)");
-            Job newjob3 = new Job("2019-06-11", "Singapore", "dummy job update jobs 2");
+            Job newjob1 = new Job("dummy job update jobs 1", "2019-06-11", "Singapore");
+            Job newjob2 = new Job("when job status updated to c/pc/f without pod time throw error (updating jobs)", "2019-06-11", "Singapore");
+            Job newjob3 = new Job("dummy job update jobs 2", "2019-06-11", "Singapore");
             newjobs.Add(newjob1);
             newjobs.Add(newjob2);
             newjobs.Add(newjob3);
@@ -396,9 +396,9 @@ namespace Tests
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
             List<Job> jobs = new List<Job>();
-            Job job1 = new Job("2019-06-11", "Singapore", "when job status updated to c/pc/f without pod time throw error (updating jobs)");
-            Job job2 = new Job("2019-06-11", "Singapore", "dummy job update jobs 1");
-            Job job3 = new Job("2019-06-11", "Singapore", "dummy job update jobs 2");
+            Job job1 = new Job("when job status updated to c/pc/f without pod time throw error (updating jobs)", "2019-06-11", "Singapore");
+            Job job2 = new Job("dummy job update jobs 1", "2019-06-11", "Singapore");
+            Job job3 = new Job("dummy job update jobs 2", "2019-06-11", "Singapore");
 
             job1.AssignTo = "Nina";
             job2.AssignTo = "Nina";
@@ -421,9 +421,9 @@ namespace Tests
             Job.DeleteJobs(jobs).Wait();
 
             List<Job> newjobs = new List<Job>();
-            Job newjob1 = new Job("2019-06-11", "Singapore", "dummy job update jobs 1");
-            Job newjob2 = new Job("2019-06-11", "Singapore", "when job status updated to c/pc/f without pod time throw error (updating jobs)");
-            Job newjob3 = new Job("2019-06-11", "Singapore", "dummy job update jobs 2");
+            Job newjob1 = new Job("dummy job update jobs 1", "2019-06-11", "Singapore");
+            Job newjob2 = new Job("when job status updated to c/pc/f without pod time throw error (updating jobs)", "2019-06-11", "Singapore");
+            Job newjob3 = new Job("dummy job update jobs 2", "2019-06-11", "Singapore");
             newjobs.Add(newjob1);
             newjobs.Add(newjob2);
             newjobs.Add(newjob3);
@@ -447,9 +447,9 @@ namespace Tests
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
             List<Job> jobs = new List<Job>();
-            Job job1 = new Job("2019-06-11", "Singapore", "i dont exist");
-            Job job2 = new Job("2019-06-11", "Singapore", "dummy delete job 1");
-            Job job3 = new Job("2019-06-11", "Singapore", "dummy delete job 2");
+            Job job1 = new Job("i dont exist", "2019-06-11", "Singapore");
+            Job job2 = new Job("dummy delete job 1", "2019-06-11", "Singapore");
+            Job job3 = new Job("dummy delete job 2", "2019-06-11", "Singapore");
 
             jobs.Add(job1);
             jobs.Add(job2);
@@ -467,9 +467,9 @@ namespace Tests
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
             List<Job> jobs = new List<Job>();
-            Job job1 = new Job("2019-06-11", "Singapore", "when job is completed throw error");
-            Job job2 = new Job("2019-06-11", "Singapore", "dummy delete job 1");
-            Job job3 = new Job("2019-06-11", "Singapore", "dummy delete job 2");
+            Job job1 = new Job("when job is completed throw error", "2019-06-11", "Singapore");
+            Job job2 = new Job("dummy delete job 1", "2019-06-11", "Singapore");
+            Job job3 = new Job("dummy delete job 2", "2019-06-11", "Singapore");
 
             jobs.Add(job1);
             jobs.Add(job2);
@@ -488,9 +488,9 @@ namespace Tests
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
             List<Job> jobs = new List<Job>();
-            Job job1 = new Job("2019-06-11", "Singapore", "when job is partially completed throw error");
-            Job job2 = new Job("2019-06-11", "Singapore", "dummy delete job 1");
-            Job job3 = new Job("2019-06-11", "Singapore", "dummy delete job 2");
+            Job job1 = new Job("when job is partially completed throw error", "2019-06-11", "Singapore");
+            Job job2 = new Job("dummy delete job 1", "2019-06-11", "Singapore");
+            Job job3 = new Job("dummy delete job 2", "2019-06-11", "Singapore");
 
             jobs.Add(job1);
             jobs.Add(job2);
@@ -508,9 +508,9 @@ namespace Tests
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
             List<Job> jobs = new List<Job>();
-            Job job1 = new Job("2019-06-11", "Singapore", "when job is failed throw error");
-            Job job2 = new Job("2019-06-11", "Singapore", "dummy delete job 1");
-            Job job3 = new Job("2019-06-11", "Singapore", "dummy delete job 2");
+            Job job1 = new Job("when job is failed throw error", "2019-06-11", "Singapore");
+            Job job2 = new Job("dummy delete job 1", "2019-06-11", "Singapore");
+            Job job3 = new Job("dummy delete job 2", "2019-06-11", "Singapore");
 
             jobs.Add(job1);
             jobs.Add(job2);
@@ -537,9 +537,9 @@ namespace Tests
         {
             Job.DefaultApiKey = "ed1037b346267186fc71a6ea4e15074df54f3a77d30ac1d0";
             List<Job> jobs = new List<Job>();
-            Job job1 = new Job("2019-06-11", "Singapore", "dummy delete job 1");
-            Job job2 = new Job("2019-06-11", "Singapore", "when job is out for delivery expect pass (Delete jobs)");
-            Job job3 = new Job("2019-06-11", "Singapore", "dummy delete job 2");
+            Job job1 = new Job("dummy delete job 1", "2019-06-11", "Singapore");
+            Job job2 = new Job("when job is out for delivery expect pass (Delete jobs)", "2019-06-11", "Singapore");
+            Job job3 = new Job("dummy delete job 2", "2019-06-11", "Singapore");
 
             jobs.Add(job1);
             jobs.Add(job2);
@@ -555,9 +555,9 @@ namespace Tests
             }
 
             List<Job> newjobs = new List<Job>();
-            Job newjob1 = new Job("2019-06-11", "Singapore", "dummy delete job 1");
-            Job newjob2 = new Job("2019-06-11", "Singapore", "when job is out for delivery expect pass (Delete jobs)");
-            Job newjob3 = new Job("2019-06-11", "Singapore", "dummy delete job 2");
+            Job newjob1 = new Job("dummy delete job 1", "2019-06-11", "Singapore");
+            Job newjob2 = new Job("when job is out for delivery expect pass (Delete jobs)", "2019-06-11", "Singapore");
+            Job newjob3 = new Job("dummy delete job 2", "2019-06-11", "Singapore");
 
             newjobs.Add(newjob1);
             newjobs.Add(newjob2);
