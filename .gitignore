@@ -1,8 +1,8 @@
 .DS_store
 Detrack
 .vs
-*.nupkg
-*.nuspec
+DetrackLibrary/*.nupkg
+DetrackLibrary/*.nuspec
 Settings.StyleCop
 DetrackLibrary/.vs
 DetrackLibrary/bin
