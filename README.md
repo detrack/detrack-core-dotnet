@@ -6,7 +6,7 @@ Official core library for .NET applications to interact with the [Detrack](https
 ## Installation
 Install with dotnet-cli:
 ```
-dotnet add package ?????
+dotnet add package Detrack.DetrackCore
 ```
 Add your default API KEY (this can be retrieved from the dashboard web application):
 ```csharp
