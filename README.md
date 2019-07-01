@@ -41,7 +41,7 @@ job.UpdateJob("doNumber", "date").Wait();
 ```
 
 #### Retrieve a job:
-**Note:** Returns a `Task<string>` so it needs to be awaited. (`await` will convert `Task<string>` to `string`)
+**Note:** Returns a `Job` so it needs to be awaited.
 ```csharp
 string job = await Job.RetrieveJob("doNumber", "date");
 ```
@@ -144,7 +144,7 @@ Job.DeleteJobs(joblist);
 
 ## Extra Functions
 #### List All Jobs:
-**Note:** Parameters available is : `page`, `limit`, `date`, `type`, `assignTo`, `JobStatus`, `doNumber`.
+**Note:** Parameters available is : `page`, `limit`, `date`, `type`, `assignTo`, `JobStatus`, `doNumber`. This function will return `List<Job>`.
 
 ```csharp
 // create a dictionary with type string as key and values
