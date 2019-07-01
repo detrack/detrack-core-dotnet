@@ -41,8 +41,9 @@ job.UpdateJob("doNumber", "date").Wait();
 ```
 
 #### Retrieve a job:
+**Note:** Returns a `Task<string>` so it needs to be awaited. (`await` will convert `Task<string>` to `string`)
 ```csharp
-Job.RetrieveJob("doNumber", "date").Wait();
+string job = await Job.RetrieveJob("doNumber", "date");
 ```
 
 #### Delete a job:
