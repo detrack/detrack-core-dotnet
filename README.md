@@ -186,18 +186,3 @@ job.Items.Add(item);
 // update the job
 Job.UpdateJob("doNumber", "date").Wait();
 ```
-
-#### Removing Items
-```csharp
-// if you know the index of the item
-job.Items.RemoveAt(index);
-
-//if you know the ID of the items
-foreach (Item item in job.Items)
-{
-    if (item.ID == "job id to delete")
-    {
-        job.Items.Remove(item);
-    }
-}
-```
