@@ -1,6 +1,7 @@
 ![Detrack logo](https://www.detrack.com/wp-content/uploads/2016/12/Logo_detrack.png)
 # detrack-core-dotnet
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 Official core library for .NET applications to interact with the [Detrack](https://www.detrack.com) API. :thumbsup:
 
 ## Installation
