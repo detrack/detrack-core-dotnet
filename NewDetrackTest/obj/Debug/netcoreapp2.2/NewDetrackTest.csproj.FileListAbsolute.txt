@@ -1,0 +1,34 @@
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/bin/Debug/netcoreapp2.2/nunit.engine.netstandard.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackTest.deps.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackTest.runtimeconfig.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackTest.runtimeconfig.dev.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackTest.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackTest.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackLibrary.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackLibrary.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.csprojAssemblyReference.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.csproj.CoreCompileInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.AssemblyInfoInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.AssemblyInfo.cs
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.csproj.CopyComplete
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/bin/Debug/netcoreapp2.2/NUnit3.TestAdapter.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/bin/Debug/netcoreapp2.2/nunit.engine.netstandard.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackTest.deps.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackTest.runtimeconfig.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackTest.runtimeconfig.dev.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackTest.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackTest.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackLibrary.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/bin/Debug/netcoreapp2.2/NewDetrackLibrary.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.csprojAssemblyReference.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.csproj.CoreCompileInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.AssemblyInfoInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.AssemblyInfo.cs
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.csproj.CopyComplete
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackTest/obj/Debug/netcoreapp2.2/NewDetrackTest.pdb

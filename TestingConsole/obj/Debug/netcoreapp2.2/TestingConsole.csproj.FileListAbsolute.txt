@@ -1,0 +1,28 @@
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.csprojAssemblyReference.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.csproj.CoreCompileInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.AssemblyInfoInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.AssemblyInfo.cs
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/bin/Debug/netcoreapp2.2/TestingConsole.deps.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/bin/Debug/netcoreapp2.2/TestingConsole.runtimeconfig.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/bin/Debug/netcoreapp2.2/TestingConsole.runtimeconfig.dev.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/bin/Debug/netcoreapp2.2/TestingConsole.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/bin/Debug/netcoreapp2.2/TestingConsole.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/bin/Debug/netcoreapp2.2/NewDetrackLibrary.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/bin/Debug/netcoreapp2.2/NewDetrackLibrary.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.csproj.CopyComplete
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/bin/Debug/netcoreapp2.2/TestingConsole.deps.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/bin/Debug/netcoreapp2.2/TestingConsole.runtimeconfig.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/bin/Debug/netcoreapp2.2/TestingConsole.runtimeconfig.dev.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/bin/Debug/netcoreapp2.2/TestingConsole.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/bin/Debug/netcoreapp2.2/TestingConsole.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/bin/Debug/netcoreapp2.2/NewDetrackLibrary.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/bin/Debug/netcoreapp2.2/NewDetrackLibrary.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.csprojAssemblyReference.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.csproj.CoreCompileInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.AssemblyInfoInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.AssemblyInfo.cs
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.csproj.CopyComplete
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/TestingConsole/obj/Debug/netcoreapp2.2/TestingConsole.pdb

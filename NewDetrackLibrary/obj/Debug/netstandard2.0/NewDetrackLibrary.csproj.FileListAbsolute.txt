@@ -1,0 +1,18 @@
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/bin/Debug/netstandard2.0/NewDetrackLibrary.deps.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/bin/Debug/netstandard2.0/NewDetrackLibrary.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/bin/Debug/netstandard2.0/NewDetrackLibrary.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.csprojAssemblyReference.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.csproj.CoreCompileInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.AssemblyInfoInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.AssemblyInfo.cs
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackLibrary/bin/Debug/netstandard2.0/NewDetrackLibrary.deps.json
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackLibrary/bin/Debug/netstandard2.0/NewDetrackLibrary.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackLibrary/bin/Debug/netstandard2.0/NewDetrackLibrary.pdb
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.csprojAssemblyReference.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.csproj.CoreCompileInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.AssemblyInfoInputs.cache
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.AssemblyInfo.cs
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.dll
+/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary copy/NewDetrackLibrary/obj/Debug/netstandard2.0/NewDetrackLibrary.pdb

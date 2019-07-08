@@ -1,0 +1,116 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/TestingConsole.csproj": {}
+  },
+  "projects": {
+    "/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/NewDetrackLibrary.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/NewDetrackLibrary.csproj",
+        "projectName": "NewDetrackLibrary",
+        "projectPath": "/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/NewDetrackLibrary.csproj",
+        "packagesPath": "/Users/sesiliafeninagunawan/.nuget/packages/",
+        "outputPath": "/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/sesiliafeninagunawan/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/TestingConsole.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/TestingConsole.csproj",
+        "projectName": "TestingConsole",
+        "projectPath": "/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/TestingConsole.csproj",
+        "packagesPath": "/Users/sesiliafeninagunawan/.nuget/packages/",
+        "outputPath": "/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/TestingConsole/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/sesiliafeninagunawan/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/NewDetrackLibrary.csproj": {
+                "projectPath": "/Users/sesiliafeninagunawan/Projects/NewDetrackLibrary/NewDetrackLibrary/NewDetrackLibrary.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

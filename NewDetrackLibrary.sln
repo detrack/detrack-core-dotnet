@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewDetrackLibrary", "NewDetrackLibrary\NewDetrackLibrary.csproj", "{4EFC36B9-1AE3-4A46-AEB1-92AAA26D2E2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingConsole", "TestingConsole\TestingConsole.csproj", "{31B50D1F-BB44-47C3-AE43-9A9D6808877F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewDetrackTest", "NewDetrackTest\NewDetrackTest.csproj", "{59BEDD59-AAF0-497C-8450-67EF86BD0218}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EFC36B9-1AE3-4A46-AEB1-92AAA26D2E2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFC36B9-1AE3-4A46-AEB1-92AAA26D2E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFC36B9-1AE3-4A46-AEB1-92AAA26D2E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFC36B9-1AE3-4A46-AEB1-92AAA26D2E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B50D1F-BB44-47C3-AE43-9A9D6808877F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B50D1F-BB44-47C3-AE43-9A9D6808877F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B50D1F-BB44-47C3-AE43-9A9D6808877F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B50D1F-BB44-47C3-AE43-9A9D6808877F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59BEDD59-AAF0-497C-8450-67EF86BD0218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59BEDD59-AAF0-497C-8450-67EF86BD0218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59BEDD59-AAF0-497C-8450-67EF86BD0218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59BEDD59-AAF0-497C-8450-67EF86BD0218}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

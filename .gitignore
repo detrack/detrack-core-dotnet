@@ -14,4 +14,5 @@ DetrackLibrary/StyleCop.Cache
 DetrackTest/bin
 DetrackTest/obj
 DetrackTest/.DS_Store
-
+Exceptions/bin
+Exceptions/obj
