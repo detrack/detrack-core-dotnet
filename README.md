@@ -1,8 +1,9 @@
-![Detrack logo](https://www.detrack.com/wp-content/uploads/2016/12/Logo_detrack.png)
+![Detrack logo](https://www.detrack.com/wp-content/uploads/2019/06/Logo_detrack-500px.png)
 # detrack-core-dotnet
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-Official core library for .NET applications to interact with the [Detrack](https://www.detrack.com) API. :thumbsup:
+
+Official core library for .NET applications to interact with the [Detrack](https://www.detrack.com) API.
 
 ## Installation
 Install with dotnet-cli:
@@ -14,7 +15,7 @@ Add your default API KEY (this can be retrieved from the dashboard web applicati
 using Detrack.DetrackCore;
 Job.DefaultApiKey = "keygoeshere";
 ```
-**Note:** All methods are Http requests which is async and therefore needs to be awaited before running the next lines.
+**Note:** All methods below are Http request which is async, therefore it needs wrapped in an async Task method during call and then awaited. (More information on this in the examples)
 
 ## For single job
 #### Instantiate a new `Job` class:
@@ -25,38 +26,39 @@ Job job = new Job("doNumber", "date", "address");
 ```csharp
 // instantiate a job class
 Job job = new Job("doNumber", "date", "address");
+
 // static method
-Job.CreateJob(job).Wait();
+await Job.CreateJob(job);
 ```
 
 #### Update a job:
 **Note:**
-- UpdateJob is a non-static method.
+- UpdateJob is a **non-static** method.
 - Both parameters are optional. If not given, it will take the instance's do number and date
 ```csharp
 // instantiate a job class
 Job job = new Job("doNumber", "date", "address");
 
 // instance method
-job.UpdateJob("doNumber", "date").Wait();
+await job.UpdateJob("doNumber", "date");
 ```
 
 #### Retrieve a job:
-**Note:** Returns a `Job` so it needs to be awaited.
+**Note:** Returns a `Job`.
 ```csharp
-string job = await Job.RetrieveJob("doNumber", "date");
+Job job = await Job.RetrieveJob("doNumber", "date");
 ```
 
 #### Delete a job:
 **Note:** Job can only be deleted if its status is "info received" or "out for delivery"
 ```csharp
-Job.DeleteJob("doNumber", "date").Wait();
+await Job.DeleteJob("doNumber", "date");
 ```
 
 #### Reattempt a job:
-**Note:** Only failed jobs can be reattempted
+**Note:** Only **failed** jobs can be reattempted
 ```csharp
-Job.ReattemptJob("doNumber", "date").Wait();
+await Job.ReattemptJob("doNumber", "date");
 ```
 
 ## For multiple jobs
@@ -96,7 +98,7 @@ joblist.Add(job2);
 joblist.Add(job3);
 
 // batch create jobs
-Job.CreateJobs(joblist).Wait();
+await Job.CreateJobs(joblist);
 ```
 
 #### Batch update jobs:
@@ -120,7 +122,7 @@ joblist.Add(job2);
 joblist.Add(job3);
 
 // batch update jobs
-Job.UpdateJobs(joblist).Wait();
+await Job.UpdateJobs(joblist).Wait();
 ```
 
 #### Batch delete jobs:
@@ -140,12 +142,15 @@ joblist.Add(job2);
 joblist.Add(job3);
 
 // batch delete jobs
-Job.DeleteJobs(joblist);
+await Job.DeleteJobs(joblist);
 ```
 
 ## Extra Functions
 #### List All Jobs:
-**Note:** Parameters available is : `page`, `limit`, `date`, `type`, `assignTo`, `JobStatus`, `doNumber`. This function will return `List<Job>`.
+**Note:** 
+- Returns `List<Job>`
+- Parameters available is : `page`, `limit`, `date`, `type`, `assignTo`, `status`, `DONumber`. ALl parameters are optional parameters (giving an empty `Dictionary<string, string>` will still work.)
+- `assignTo` can be "_name of driver_", "unassigned" or empty.
 
 ```csharp
 // create a dictionary with type string as key and values
@@ -154,20 +159,23 @@ Dictionary<string,string> parameters = new Dictionary<string,string>();
 // add your parameters
 parameters.Add("page", 5);
 parameters.Add("date", "2019-05-01");
-parameters.Add("JobStatus", JobStatus.completed_partial.ToString());
+parameters.Add("status", Status.completed_partial.ToString());
+parameters.Add("assignTo", "unassigned") //or parameters.Add("assignTo", "your driver")
 
 // list all jobs
-Job.ListAllJobs(parameters);
+List<Job> joblist = await Job.ListAllJobs(parameters);
 ```
 
 #### Download Job POD or shipping label as pdf:
-**Note:** pathToSaveFile will start in the folder that contains the dll. If you want to go out of the folder then do `../`
+**Note:** pathToSaveFile will start in the folder that contains the dll. If you want to go out of the folder then do `..`
 ```csharp
-Job.DownloadJobExport("doNumber", "pathToSaveFile", "documentType(pod or shipping-label)", "date").Wait();
+await Job.DownloadJobExport("doNumber", "pathToSaveFile", "documentType(pod or shipping-label)", "date");
 ```
 
-## Adding and Removing Items on a Job
-**Note:** Updating an item requires you to create a new `Item` class and push the update
+## Adding Items on a Job
+**Note:** 
+- Updating an item requires you to create a new `Item` class and push the update
+- Pushing an item will delete all the existing items so if youwant to have multiple items make sure to update them in 1 request
 #### Adding Items
 ```csharp
 // instantiate a job
@@ -185,5 +193,20 @@ item.RejectQuantity= 20;
 job.Items.Add(item);
 
 // update the job
-Job.UpdateJob("doNumber", "date").Wait();
+await Job.UpdateJob("doNumber", "date");
+```
+
+## Examples
+**Note:** As mentioned before, Http request is async so the methods must be wrapped in an async method. `.Wait()` and `.Result()` will cause instant deadlock when called from a UI thread. It will work fine on console but considered an unsafe practice. Below is one way to avoid the deadlock :
+
+```csharp
+using System.Threading.Tasks;
+using Detrack.DetrackCore;
+
+public static async Task CreatingJob()
+{
+    Job.DefaultApiKey = "yourapikey";
+    Job job = new Job("doNumber", "date", "address");
+    await Job.CreateJob(job);
+}
 ```
